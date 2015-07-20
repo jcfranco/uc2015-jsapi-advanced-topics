@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UC 2015 – Advanced JavaScript API Topics</title>
+</head>
+<body>
+  <script>
+    var dojoConfig = {
+      packages: [{
+        name: "demo", location: location.pathname.replace(/[^/]+$/,"")
+      }],
+      async: true
+    };
+  </script>
+  <script src="//jsdev.arcgis.com/3.14"></script>
+  <script>
+    require([
+      "demo/messages",
+      "demo/mixedInMessages",
+    ], function(
+      messages,
+      mixedInMessages
+    ) {
+
+      console.log(messages);
+      console.log(mixedInMessages);
+
+    });
+  </script>
+  <div>Look in dev tools console!</div>
+</body>
+</html>

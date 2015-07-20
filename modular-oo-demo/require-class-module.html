@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UC 2015 – Advanced JavaScript API Topics</title>
+</head>
+<body>
+  <script>
+    var dojoConfig = {
+      packages: [{
+        name: "demo", location: location.pathname.replace(/[^/]+$/,"")
+      }],
+      async: true
+    };
+  </script>
+  <script src="//jsdev.arcgis.com/3.14"></script>
+  <script>
+    var greeterA, greeterB;
+
+    require([
+      "demo/Greeter"
+    ],
+    function(
+      Greeter
+    ) {
+
+      greeterA = new Greeter();
+      console.log("=== created greeterA ===");
+
+      greeterB = new Greeter();
+      console.log("=== created greeterB ===");
+
+      window.createGreeter = function() {
+        console.log("=== created anonymous greeter ===");
+        new Greeter();
+      };
+
+    });
+  </script>
+
+  <span>Look in dev tools console!</span>
+
+  <input type="button" value="create Greeter" onclick="createGreeter()"/>
+
+</body>
+</html>
