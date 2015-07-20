@@ -1,0 +1,22 @@
+.crimson .demo-banner,
+.crimson .uc-home .home,
+.crimson .esriSimpleSlider .esriSimpleSliderDecrementButton,
+.crimson .esriSimpleSlider .esriSimpleSliderIncrementButton {
+  background-color: #dc143c;
+  color: #fff
+}
+
+.crimson .uc-home .home:hover,
+.crimson .esriSimpleSlider .esriSimpleSliderDecrementButton:hover,
+.crimson .esriSimpleSlider .esriSimpleSliderIncrementButton:hover  {
+  background-color: #fff;
+  color: #dc143c;
+}
+
+.crimson .uc-home .home {
+  background-image: url(../../widgets/ucHome/images/home-white.png);
+}
+
+.crimson .uc-home .home:hover {
+  background-image: url(images/home-crimson.png);
+}

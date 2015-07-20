@@ -1,0 +1,30 @@
+@import url(common.css);
+@import url(../widgets/banner/css/Banner.css);
+
+.demo {
+  background-color: #888;
+}
+
+.demo-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0
+}
+
+.demo-hello {
+  font-size: 4.5em;
+  color: #fff;
+}
+
+.demo-layout-centered-container {
+  position: relative;
+  height: 100%;
+}
+
+.demo-layout-centered-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

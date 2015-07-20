@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UC 2015 – Advanced JavaScript API Topics</title>
+  <link rel="stylesheet" href="css/banner.css"/>
+</head>
+<body class="demo">
+  <script>
+    var dojoConfig = {
+      packages: [{
+        name: "demo", location: location.pathname.replace(/[^/]+$/,"")
+      }],
+      async: true
+    };
+  </script>
+  <script src="//jsdev.arcgis.com/3.14"></script>
+  <script>
+    var map, banner, home;
+
+    require([
+      "demo/widgets/Banner",
+
+      "dojo/domReady!"
+    ],
+    function(
+      Banner
+    ) {
+
+      banner = new Banner(null, "bannerDiv");
+      banner.startup();
+
+    });
+  </script>
+
+  <div id="bannerDiv"></div>
+
+  <div class="demo-layout-centered-container">
+    <div class="demo-hello demo-layout-centered-content">⊂(◉‿◉)つ</div>
+  </div>
+
+</body>
+</html>

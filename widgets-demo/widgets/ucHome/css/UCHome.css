@@ -1,0 +1,12 @@
+.uc-home .home {
+  background-color: #fff;
+  background-image: url(../images/home-gray.png);
+}
+
+.uc-home .home:hover {
+  color: #fff;
+  background-color: #888;
+
+  /* a better alternative to switch images is to use a spritesheet */
+  background-image: url(../images/home-white.png);
+}

@@ -1,0 +1,22 @@
+.blue-steel .demo-banner,
+.blue-steel .uc-home .home,
+.blue-steel .esriSimpleSlider .esriSimpleSliderDecrementButton,
+.blue-steel .esriSimpleSlider .esriSimpleSliderIncrementButton  {
+  background-color: #4682b4;
+  color: #fff;
+}
+
+.blue-steel .uc-home .home:hover,
+.blue-steel .esriSimpleSlider .esriSimpleSliderDecrementButton:hover,
+.blue-steel .esriSimpleSlider .esriSimpleSliderIncrementButton:hover  {
+  background-color: #fff;
+  color: #4682b4;
+}
+
+.blue-steel .uc-home .home {
+  background-image: url(../../widgets/ucHome/images/home-white.png);
+}
+
+.blue-steel .uc-home .home:hover {
+  background-image: url(images/home-steel-blue.png);
+}

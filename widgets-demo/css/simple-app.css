@@ -1,0 +1,45 @@
+@import url(//fonts.googleapis.com/css?family=Questrial);
+@import url(//jsdev.arcgis.com/3.14/esri/css/esri.css);
+@import url(../widgets/ucHome/css/UCHome.css);
+@import url(../widgets/banner/css/Banner.css);
+@import url(common.css);
+
+.demo-banner {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0
+}
+
+.map {
+  height: 100%;
+}
+
+.uc-home {
+  margin-top: 10px;
+}
+
+.esriSimpleSlider {
+  top: 100px;
+  background-color: transparent;
+  border: none;
+  color: #888;
+  font-weight: bolder;
+}
+
+.esriSimpleSlider .esriSimpleSliderIncrementButton {
+  border: none;
+}
+
+.esriSimpleSlider .esriSimpleSliderDecrementButton,
+.esriSimpleSlider .esriSimpleSliderIncrementButton {
+  background-color: #fff;
+  padding: 2px;
+}
+
+.esriSimpleSlider .esriSimpleSliderDecrementButton:hover,
+.esriSimpleSlider .esriSimpleSliderIncrementButton:hover {
+  background-color: #888;
+  color: #fff;
+}
