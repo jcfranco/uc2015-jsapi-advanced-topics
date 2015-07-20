@@ -1,0 +1,196 @@
+@import url(//fonts.googleapis.com/css?family=Questrial);
+@import url(//jsdev.arcgis.com/3.14/esri/css/esri.css);
+
+/*
+  Note that this demo uses the following simplistic breakpoints:
+
+  * mobile – width < 768 px
+  * tablet – width >= 768 px < 1224 px
+  * desktop – width >= 1224 px
+*/
+
+html,
+body {
+  font-family: "Questrial", sans-serif;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.box-content {
+  box-sizing: border-box;
+}
+
+.full-percent-height {
+  height: 100%;
+}
+
+.auto-height {
+  height: auto;
+}
+
+.content-panel {
+  background-color: #eee;
+  color: #888;
+}
+
+.content-text {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.padded-content {
+  padding: 2px 12px;
+}
+
+.scrolling-content {
+  overflow-y: auto;
+}
+
+.banner {
+  height: 40px;
+  text-align: center;
+  background-color: #b9dc5e;
+  position: absolute;
+  font-weight: bolder;
+  font-size: 2em;
+  line-height: 1.3;
+  color: #4e5c28;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.left-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 40px;
+  overflow: hidden;
+
+  z-index: 100;
+
+  -webkit-transition: height 0.2s;
+  -moz-transition: height 0.2s;
+  -ms-transition: height 0.2s;
+  -o-transition: height 0.2s;
+  transition: height 0.2s;
+}
+
+.left-panel-header {
+  display: none;
+}
+
+.right-panel {
+  display: none;
+}
+
+.secondary-content {
+  color: #545c45;
+}
+
+.primary-content {
+  color: #8e9c74;
+}
+
+.map {
+  position: absolute;
+  top: 40px;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+}
+
+.esriSimpleSlider {
+  display: none;
+}
+
+.HomeButton,
+.LocateButton {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  margin-bottom: 6px;
+}
+
+.arcgisSearch {
+  z-index: 1;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+/* mobile overrides */
+@media only screen and (max-width: 768px) {
+  .left-panel.is-tucked {
+    top: auto;
+    height: 100px;
+  }
+
+  .left-panel-header {
+    display: block;
+    background-color: #839c43;
+    color: #b9dc5e;
+    font-size: 2em;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  .HomeButton .home,
+  .LocateButton .zoomLocateButton {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+/* tablet (portrait and landscape) */
+@media only screen and (min-width: 768px) {
+  .side-panel {
+    width: 200px;
+  }
+
+  .left-panel {
+    top: 60px;
+  }
+
+  .banner {
+    height: 60px;
+    line-height: 1.5;
+    font-size: 2.5em;
+  }
+
+  .map {
+    top: 60px;
+    bottom: 0;
+    left: 200px;
+  }
+
+  .esriSimpleSlider {
+    display: block;
+  }
+
+  .HomeButton,
+  .LocateButton {
+    top: 90px;
+  }
+}
+
+/* desktop/laptop */
+@media only screen and (min-width: 1224px) {
+  .left-panel {
+    right: 0;
+  }
+
+  .right-panel {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    bottom: 0;
+  }
+
+  .map {
+    right: 200px;
+  }
+}

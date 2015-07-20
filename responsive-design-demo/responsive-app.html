@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UC 2015 – Advanced JavaScript API Topics</title>
+  <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="responsive-app.css"/>
+</head>
+<body class="app">
+  <script>
+    var dojoConfig = {
+      packages: [{
+        name: "demo", location: location.pathname.replace(/[^/]+$/,"")
+      }],
+      async: true
+    };
+  </script>
+  <script src="//jsdev.arcgis.com/3.14"></script>
+  <script>
+    var map, locate, home, search;
+
+    require([
+      "dojo/dom",
+      "dojo/dom-class",
+      "dojo/dom-construct",
+      "dojo/on",
+
+      "esri/dijit/HomeButton",
+      "esri/dijit/LocateButton",
+      "esri/dijit/Search",
+
+      "esri/geometry/Extent",
+
+      "esri/map",
+      "esri/SpatialReference",
+
+      "dojo/domReady!"
+    ],
+    function(
+      dom, domClass, domConstruct, on,
+      HomeButton, LocateButton, Search,
+      Extent,
+      Map, SpatialReference
+    ) {
+
+      var sdccExtent = new Extent({
+        xmax: -13041992.04429203,
+        xmin: -13043007.22357397,
+        ymax: 3857207.8634300223,
+        ymin: 3855531.026121972,
+        spatialReference: new SpatialReference(102100)
+      });
+
+      map = new Map("mapDiv", {
+        basemap: "topo",
+        extent: sdccExtent
+      });
+
+      locate = new LocateButton({
+        map: map
+      });
+
+      home = new HomeButton({
+        map: map,
+        extent: sdccExtent
+      });
+
+      search = new Search({
+        map: map
+      });
+
+      adaptToSize();
+
+      map.on("load", function() {
+        search.placeAt("mapDiv", "first");
+        search.startup();
+
+        toggleSearchMode();
+
+        /*
+          the zoom slider's ID is generated dynamically with the following pattern:
+          <ID>_zoom_slider
+        */
+        home.placeAt("mapDiv_zoom_slider", "after");
+        locate.placeAt("mapDiv_zoom_slider", "after");
+      });
+
+      on(window, "resize", adaptToSize);
+
+      on(dom.byId("sidebarHeader"), "click", function() {
+        domClass.toggle("leftPanel", "is-tucked");
+      });
+
+      function adaptToSize() {
+        var appWidth = document.body.clientWidth;
+
+        toggleSearchMode(appWidth);
+        placeSecondaryContent(appWidth);
+      }
+
+      function toggleSearchMode(appWidth) {
+        var smallerThanTabletBreakpoint = appWidth < 768;
+
+        search.set("enableButtonMode", smallerThanTabletBreakpoint);
+      }
+
+      function placeSecondaryContent(appWidth) {
+        var smallerThanDesktopBreakpoint = appWidth < 1224;
+
+        if (smallerThanDesktopBreakpoint) {
+          domConstruct.place("secondaryContent", "primaryContent", "after");
+        }
+        else {
+          domConstruct.place("secondaryContent", "rightContentContainer");
+        }
+      }
+
+    });
+  </script>
+
+  <div id="mapDiv" class="box-content"></div>
+
+  <div class="banner box-content">Hello UC 2015!</div>
+
+  <div id="leftPanel" class="left-panel side-panel box-content content-panel auto-height is-tucked">
+    <div id="sidebarHeader" class="left-panel-header padded-content">Sidebar</div>
+
+    <div id="leftContentContainer" class="scrolling-content padded-content full-percent-height box-content">
+      <p id="primaryContent" class="content-text primary-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada vitae tortor vel pulvinar. Proin nec lorem leo. Integer mauris sem, ultricies eget blandit in, congue ut quam. Vivamus maximus enim quis ultricies condimentum. In tempor lorem sed pretium aliquam. Morbi aliquam bibendum nisl, non eleifend dui tempus non. Duis quis sapien quis nulla varius porta. Nulla vestibulum metus eget urna tincidunt, nec lobortis leo fringilla.
+      </p>
+    </div>
+  </div>
+
+  <div id="rightPanel" class="right-panel side-panel box-content content-panel auto-height">
+    <div id="rightContentContainer" class="box-content scrolling-content full-percent-height padded-content ">
+      <p id="secondaryContent" class="content-text secondary-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada vitae tortor vel pulvinar. Proin nec lorem leo. Integer mauris sem, ultricies eget blandit in, congue ut quam. Vivamus maximus enim quis ultricies condimentum. In tempor lorem sed pretium aliquam. Morbi aliquam bibendum nisl, non eleifend dui tempus non. Duis quis sapien quis nulla varius porta. Nulla vestibulum metus eget urna tincidunt, nec lobortis leo fringilla.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
