@@ -1,10 +1,10 @@
 define([
-  "./mixedInMessages",
+  "./mixedMessages",
 
   "dojo/_base/declare"
 ],
 function(
-  mixedInMessages,
+  mixedMessages,
   declare
 ) {
 
@@ -14,7 +14,7 @@ function(
   // expose module definition (constructor function)
   return declare(null, {
 
-    greetings: mixedInMessages.greetings,
+    greetings: mixedMessages.greetings,
 
     constructor: function() {
       instanceCount++;
