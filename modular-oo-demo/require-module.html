@@ -18,22 +18,22 @@
   <script src="//jsdev.arcgis.com/3.14"></script>
   <script>
 
-    var messages, mixedMessages;
+    var messages, greetings;
 
     require([
       "demo/messages",
-      "demo/mixedMessages"
+      "demo/greetings"
     ],
     function(
       messages,
-      mixedMessages
+      greetings
     ) {
 
       console.log("messages ->", messages);
-      console.log("mixedMessages ->", mixedMessages);
+      console.log("greetings ->", greetings);
 
       this.messages = messages;
-      this.mixedInMessages = mixedMessages;
+      this.greetings = greetings;
 
     });
 

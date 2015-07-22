@@ -1,31 +1,33 @@
 define([
-  "./mixedMessages",
+  "./greetings",
 
   "dojo/_base/declare"
 ],
 function(
-  mixedMessages,
+  greetings,
   declare
 ) {
 
   // private variable
-  var instanceCount = 0;
+  var defaultName = "Greeter";
 
   // expose module definition (constructor function)
   return declare(null, {
 
-    greetings: mixedMessages.greetings,
+    _greetingsCount: 0,
 
-    constructor: function() {
-      instanceCount++;
+    name: null,
+
+    subject: null,
+
+    constructor: function(name) {
+      this.name = name || defaultName;
     },
 
     greet: function() {
-      console.log(this.greetings);
-    },
+      greetings.greet(this.subject);
 
-    totalGreeters: function() {
-      console.log(instanceCount);
+      console.info(this.name + " has greeted " + ++this._greetingsCount + " times");
     }
 
   });
