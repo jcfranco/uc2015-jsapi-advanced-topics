@@ -1,4 +1,4 @@
-# Advanced JavaScript API Topics (widgets)
+# Widgets Demo
 
 ## Highlights
 

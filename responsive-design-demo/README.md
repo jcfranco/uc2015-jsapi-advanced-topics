@@ -1,4 +1,4 @@
-# Advanced JavaScript API Topics (responsive design)
+# Responsive Design Demo
 
 ## Highlights
 

@@ -1,4 +1,4 @@
-# Modular/OO JS
+# Modular/OO JS Demo
 
 ## Highlights
 
