@@ -27,24 +27,15 @@
       Greeter
     ) {
 
-      greeterA = new Greeter();
-      console.log("=== created greeterA ===");
+      greeterA = new Greeter("A");
 
-      greeterB = new Greeter();
-      console.log("=== created greeterB ===");
-
-      window.createGreeter = function() {
-        console.log("=== created anonymous greeter ===");
-        new Greeter();
-      };
+      greeterB = new Greeter("B");
 
     });
 
   </script>
 
   <span>Look in dev tools console!</span>
-
-  <input type="button" value="create Greeter" onclick="createGreeter()"/>
 
 </body>
 </html>
