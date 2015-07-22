@@ -12,12 +12,12 @@
   right: 0
 }
 
-.map {
-  height: 100%;
-}
-
 .uc-home {
   margin-top: 10px;
+}
+
+.map {
+  height: 100%;
 }
 
 .esriSimpleSlider {
