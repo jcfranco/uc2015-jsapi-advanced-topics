@@ -17,18 +17,21 @@
   </script>
   <script src="//jsdev.arcgis.com/3.14"></script>
   <script>
+
     require([
       "demo/messages",
       "demo/mixedInMessages",
-    ], function(
+    ],
+    function(
       messages,
       mixedInMessages
     ) {
 
-      console.log(messages);
-      console.log(mixedInMessages);
+      console.log("messages ->", messages);
+      console.log("mixedInMessages ->", mixedInMessages);
 
     });
+
   </script>
   <div>Look in dev tools console!</div>
 </body>
