@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UC 2015 – Advanced JavaScript API Topics</title>
+  <style>
+    @import url(//jsdev.arcgis.com/3.14/esri/css/esri.css);
+    @import url(widgets/ucHome/css/UCHome.css);
+    @import url(css/common.css);
+
+    .map {
+      height: 100%;
+    }
+
+    .uc-home {
+      position: absolute;
+      top: 100px;
+      left: 20px;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var dojoConfig = {
+      packages: [{
+        name: "demo", location: location.pathname.replace(/[^/]+$/,"")
+      }],
+      async: true
+    };
+  </script>
+  <script src="//jsdev.arcgis.com/3.14"></script>
+  <script>
+    var map, banner, home;
+
+    require([
+      "demo/widgets/UCHome",
+
+      "esri/map",
+
+      "dojo/domReady!"
+    ], function(
+      UCHome, Map
+    ) {
+
+      map = new Map("mapDiv", {
+        basemap: "topo"
+      });
+
+      home = new UCHome({
+        map: map
+      });
+      home.startup();
+
+      map.on("load", function() {
+        home.placeAt("mapDiv_zoom_slider", "after"); // insert below zoom buttons
+        home.home();  // go home!
+      });
+
+    });
+  </script>
+
+  <div id="mapDiv"></div>
+
+</body>
+</html>
