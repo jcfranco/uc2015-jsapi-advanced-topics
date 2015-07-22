@@ -2,10 +2,9 @@
   font-size: 4em;
   text-align: center;
   position: absolute;
-  background-color: #fff;
-  color: #888;
-  height: 60px;
-
+  height: 0;
+  background-color: transparent;
+  color: transparent;
   padding: 10px;
 
   -webkit-transition: background-color 0.3s, height 0.3s, color 0.3s 0.3s;
@@ -15,8 +14,8 @@
   transition: background-color 0.3s, height 0.3s, color 0.3s 0.3s;
 }
 
-.demo-banner.is-first-appearance {
-  height: 0;
-  background-color: transparent ;
-  color: transparent;
+.demo-banner.is-ready {
+  height: 60px;
+  background-color: #fff;
+  color: #888;
 }

@@ -16,10 +16,32 @@
       async: true
     };
 
-    // use URL-provided locale if available
-    var locale = location.search.replace(/^\?locale=/,"");
-    if (locale) {
-      dojoConfig.locale = locale;
+    var urlVars = getUrlVars();
+
+    if (urlVars.locale) {
+      dojoConfig.locale = urlVars.locale;
+    }
+
+    if (urlVars.theme) {
+      document.body.className += urlVars.theme;
+    }
+
+    function getUrlVars() {
+      var queryStringIndex = location.search.indexOf("?");
+      var kvPairs = {};
+
+      if (queryStringIndex > -1) {
+        var queryString = location.search.substr(queryStringIndex + 1);
+
+        queryString.split("&").forEach(function(kvPair) {
+          var keyValue = kvPair.split("=");
+          if (keyValue.length === 2) {
+            kvPairs[keyValue[0]] = keyValue[1];
+          }
+        });
+      }
+
+      return kvPairs;
     }
   </script>
   <script src="//jsdev.arcgis.com/3.14"></script>

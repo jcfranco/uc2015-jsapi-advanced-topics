@@ -30,7 +30,7 @@ function(
       this.inherited(arguments);
 
       setTimeout(function() {
-        domClass.remove(this.domNode, "is-first-appearance");
+        domClass.add(this.domNode, "is-ready");
       }.bind(this), 1000);
     }
 
