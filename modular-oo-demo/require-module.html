@@ -18,6 +18,8 @@
   <script src="//jsdev.arcgis.com/3.14"></script>
   <script>
 
+    var messages, mixedMessages;
+
     require([
       "demo/messages",
       "demo/mixedMessages"
@@ -29,6 +31,9 @@
 
       console.log("messages ->", messages);
       console.log("mixedMessages ->", mixedMessages);
+
+      this.messages = messages;
+      this.mixedInMessages = mixedMessages;
 
     });
 
