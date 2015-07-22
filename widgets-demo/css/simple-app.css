@@ -1,8 +1,7 @@
-@import url(//fonts.googleapis.com/css?family=Questrial);
 @import url(//jsdev.arcgis.com/3.14/esri/css/esri.css);
 @import url(../widgets/ucHome/css/UCHome.css);
 @import url(../widgets/banner/css/Banner.css);
-@import url(common.css);
+@import url(../../css/common.css);
 
 .demo-banner {
   z-index: 1;

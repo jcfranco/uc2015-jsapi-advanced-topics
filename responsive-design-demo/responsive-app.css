@@ -1,5 +1,5 @@
-@import url(//fonts.googleapis.com/css?family=Questrial);
 @import url(//jsdev.arcgis.com/3.14/esri/css/esri.css);
+@import url(../css/common.css);
 
 /*
   Note that this demo uses the following simplistic breakpoints:
@@ -8,14 +8,6 @@
   * tablet – width >= 768 px < 1224 px
   * desktop – width >= 1224 px
 */
-
-html,
-body {
-  font-family: "Questrial", sans-serif;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-}
 
 .box-content {
   box-sizing: border-box;
