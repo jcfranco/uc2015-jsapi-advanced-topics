@@ -18,7 +18,7 @@
   <script src="//jsdev.arcgis.com/3.14"></script>
   <script>
 
-    var greeterA, greeterB;
+    var greeterA, greeterB, greeterNameless;
 
     require([
       "demo/Greeter"
@@ -28,8 +28,12 @@
     ) {
 
       greeterA = new Greeter("A");
-
       greeterB = new Greeter("B");
+      greeterNameless = new Greeter();
+
+      greeterA.greet();
+      greeterB.greet();
+      greeterNameless.greet();
 
     });
 
