@@ -2,7 +2,7 @@
 define({
   // expose module definition (object)
   hello: "Hello",
-  uc2015: "UC 2015!"
+  uc2015: "UC 2015"
 });
 
 /*
@@ -13,7 +13,7 @@ define({
     // expose module definition (object)
     return {
       hello: "Hello",
-      uc2015: "UC 2015!"
+      uc2015: "UC 2015"
     };
 
   });

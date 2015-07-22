@@ -1,17 +1,20 @@
 define([
-  "./messages",
-
-  "dojo/string"
+  "./messages"
 ],
 function(
-  messages,
-  string
+  messages
 ) {
+
+  // private variable
+  var endingPunctuation = "!";
 
   // expose module definition (object)
   return {
-    greetings: string.substitute("${0} ${1}", [messages.hello, messages.uc2015]),
+
+    greetings: messages.hello + " " + messages.uc2015 + endingPunctuation,
+
     messages: messages
+
   };
 
 });
