@@ -7,9 +7,11 @@ define([
 
   "esri/SpatialReference"
 ],
-function(declare, HomeButton,
-                  Extent,
-                  SpatialReference
+function(
+  declare,
+  HomeButton,
+  Extent,
+  SpatialReference
 ) {
 
   return declare([HomeButton], {
