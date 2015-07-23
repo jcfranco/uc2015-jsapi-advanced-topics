@@ -13,3 +13,5 @@
 * [widgets/extending-widget](http://jcfranco.github.io/uc2015-jsapi-advanced-topics/widgets-demo/uc-home.html)
 * [widgets/putting-it-all-together](http://jcfranco.github.io/uc2015-jsapi-advanced-topics/widgets-demo/simple-app.html)
 * [responsive-design](http://jcfranco.github.io/uc2015-jsapi-advanced-topics/responsive-design-demo/responsive-app.html)
+* [spatial indexing]()
+* [heatmap rendering]()
