@@ -4,9 +4,9 @@
 /*
   Note that this demo uses the following simplistic breakpoints:
 
-  * mobile – width < 768 px
-  * tablet – width >= 768 px < 1224 px
-  * desktop – width >= 1224 px
+  - mobile  –> width < 768 px
+  - tablet  –> width >= 768 px < 1224 px
+  - desktop –> width >= 1224 px
 */
 
 .box-content {
