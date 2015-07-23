@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UC 2015 – Advanced JavaScript API Topics</title>
+  <link rel="stylesheet" href="../css/common.css"/>
+</head>
+<body>
+  <script>
+    var dojoConfig = {
+      packages: [{
+        name: "demo",
+        location: location.pathname.replace(/[^/]+$/, "")
+      }],
+      async: true
+    };
+  </script>
+  <script src="//jsdev.arcgis.com/3.14"></script>
+  <script>
+    var widget;
+
+    require([
+      "dijit/_WidgetBase"
+    ],
+    function(
+      WidgetBase
+    ) {
+
+      widget = new WidgetBase();
+      widget.startup(); // must be called for events to function properly
+
+      widget.on("noise", function() {
+        console.log("widget: what was that noise?");
+      });
+
+      window.makeSomeNoise = function() {
+        console.log("*noise*");
+        widget.emit("noise");
+      };
+
+    });
+  </script>
+
+  <span>Look in dev tools console!</span>
+
+  <input type="button" value="make some noise" onclick="makeSomeNoise()"/>
+
+</body>
+</html>
