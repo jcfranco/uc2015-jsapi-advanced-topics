@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html> 
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <!--The viewport meta tag is used to improve the presentation and behavior of the samples 
+      on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Nearest Count - Spatial Index</title> 
+
+    <link rel="stylesheet" href="//js.arcgis.com/3.14/dijit/themes/claro/claro.css"> 
+    <link rel="stylesheet" href="//js.arcgis.com/3.14/esri/css/esri.css">
+    <style>
+      html, body, #mapDiv {
+        padding:0;
+        margin:0;
+        height:100%;
+      }
+      .simpleInfoWindow .close{
+        display: none;
+      }
+    </style>
+    <script>
+    dojoConfig = {
+      //canvasEvents:false,
+      forceGfxRenderer: "canvas"
+    };
+  </script>
+  <script src="//js.arcgis.com/3.14"></script> 
+    <script> 
+      var map, indexer, lastFeature, featureLayer;
+      require([
+        "esri/map", "esri/lang", "esri/layers/FeatureLayer", "esri/dijit/InfoWindowLite",
+        "dojo/domReady!"
+      ], function(
+        Map, esriLang, FeatureLayer, InfoWindowLite
+      ) {
+        map = new Map("mapDiv", {
+          basemap: "streets",
+          center: [-71.75, 42.25],
+          zoom: 9,
+          showInfoWindowOnClick: false
+        });
+
+        featureLayer = new FeatureLayer("http://gisprpxy.itd.state.ma.us/arcgisserver/rest/services/AGOL/NHESP_Certified_Vernal_Pools/MapServer/0", {
+          mode: FeatureLayer.MODE_ONDEMAND,
+          outFields: ["*"],
+          plugins: [{
+            id: "esri/plugins/spatialIndex",
+            options: {
+              indexType: 'kdtree'
+            }
+          }]
+        });
+
+        var infoWin = new InfoWindowLite(null, document.getElementById('results'));
+        infoWin.startup();
+        infoWin.setMap(map);
+        infoWin.setTitle("Vernal Pool Count");
+        infoWin.resize(155, 75);
+
+        map.addLayer(featureLayer);
+        map.on('mouse-move', getNearest);
+
+
+        function getNearest(evt) {
+          var pt = evt.mapPoint;
+          infoWin.show(pt);
+          featureLayer.spatialIndex.nearest({
+            point: pt,
+            distance: 1000,
+            count: 1000
+          }).then(function(msg) {
+            var results = msg.results;
+            infoWin.setContent(esriLang.substitute(results, "${length:NumberFormat} in 1km radius"));
+          });
+        }
+      });
+    </script> 
+  </head> 
+  <body class="claro"> 
+    <div id="mapDiv">
+    </div>
+    <div id="results"></div>
+  </body> 
+</html>

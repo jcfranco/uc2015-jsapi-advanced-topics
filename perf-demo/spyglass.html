@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--The viewport meta tag is used to improve the presentation and behavior of the samples 
+      on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Select with feature layer</title>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/js/dojo/dijit/themes/tundra/tundra.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/js/esri/css/esri.css">
+    <style>
+      html, body, #mapDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+      #messages{
+        background-color: #fff;
+        box-shadow: 0 0 5px #888;
+        font-size: 1.1em;
+        max-width: 15em;
+        padding: 0.5em;
+        position: absolute;
+        display: inline;
+        right: 20px;
+        top: 20px;
+        z-index: 40;
+      }
+    </style>
+    <script src="http://js.arcgis.com/3.14"></script>
+    <script src="spyglass_kd.js"></script>
+  </head>
+
+  <body>
+    <div id="messages">
+      <!-- <div id="step1">
+        Please Wait .... <br>
+        Fetching data for 70,000 wells<br>
+        <img src="http://js.arcgis.com/3.9/js/esri/dijit/images/ajax-loader.gif" width="32" height="32" alt="loading">
+      </div> -->
+      <div id="step2" hidden>Click on the map for information about the nearest 50 pools</div>
+    </div>
+    <div id="mapDiv"></div>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--The viewport meta tag is used to improve the presentation and behavior of the samples
+      on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Well completion dates for the Hugoton Gas Field Over Time</title>
+
+    <link rel="stylesheet" href="//js.arcgis.com/3.14/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="//js.arcgis.com/3.14/esri/css/esri.css">
+    <style>
+      html, body, #mapDiv {
+        padding:0;
+        margin:0;
+        height:100%;
+      }
+
+      #mapDiv {
+        position: relative;
+      }
+
+      #bottomPanel {
+        left: 50%;
+        margin: 0 auto;
+        margin-left: -500px;
+        position: absolute;
+        bottom: 2.5em;
+        height: 100px;
+      }
+
+      #timeInfo{
+        border-radius: 4px;
+        border: solid 2px #ccc;
+        background-color: #fff;
+        display: block;
+        padding: 5px;
+        position: relative;
+        text-align: center;
+        width: 1000px;
+        z-index: 99;
+      }
+
+      #topPanel{
+        height: 75px;
+      }
+
+      .leftGroup{
+        position: relative;
+        float: left;
+        width: 50%;
+      }
+
+      .rightGroup{
+        position: relative;
+        float: right;
+        width: 50%;
+        top: 15px;
+      }
+
+      #timeToggle{
+        font-size: large;
+      }
+
+    </style>
+    <!-- <script>
+      var dojoConfig = {
+        paths: {
+          esri: "../esri"
+        }
+      };
+    </script> -->
+    <script src="//js.arcgis.com/3.14"></script>
+    <!--<script src="//jsdev.arcgis.com/3.11/"></script>-->
+  </head>
+  <body class="claro">
+  <div id="topPanel">
+  <div class="leftGroup">
+  <ul id="rendererGroup">
+  <li><input type="radio" name="renderer" value="heatmap" checked> Heatmap Renderer</li>
+  <li><input type="radio" name="renderer" value="simple"> Simple Renderer</li>
+  </ul>
+  </div>
+  <div class="rightGroup">
+  <button id="timeToggle" type="button">Ignore Map Time</button>
+  </div>
+    </div>
+    <div id="mapDiv">
+      <div id="bottomPanel">
+        <div id="timeInfo">
+          <div>Hugoton Gas Field Wells from <span id="daterange">1921 to 2009</span> (Completion date)</div>
+          <div id="timeSliderDiv"></div>
+        </div>
+      </div>
+    </div>
+    <script src="timeslider.js"></script>
+  </body>
+</html>

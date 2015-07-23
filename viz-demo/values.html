@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>heatmap</title>
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.14/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.14/esri/css/esri.css" />
+    <style>
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #map {
+        width: 100%;
+        height: 100%;
+        background: #303030;
+    }
+    .blurInfo {
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        font-size: 1.25em;
+        font-family: monospace;
+        color: rgba(30, 250, 75, 0.65);
+        width: 240px;
+        background-color: rgba(200,200,200,0.35);
+        padding: 10px;
+        border-radius: 20px;
+    }
+    
+    .blurInfo p span {
+        background-color: black;
+        padding: 0 5px;
+        border-radius: 5px;
+    }
+
+    .blurInfo input[type=range]{
+        width: 100%;
+        display: block;
+    }
+        
+        
+    </style>
+    <!-- <script>
+      dojoConfig = {
+        async: true,
+        paths: {
+          esri: '../esri'
+        }
+      };
+    </script> -->
+    <script src="//js.arcgis.com/3.14"></script>
+</head>
+
+<body class="claro">
+    
+    <div id="map"></div>
+    <div class="blurInfo">
+        <p>Blur Radius : <span id="blurValue">10</span></p>
+        <input id="blurControl" type="range" max=30 min=0 value=10 step=1 />
+        <p>Max Value : <span id="maxValue">250</span></p>
+        <input id="maxControl" type="range" max=500 min=0 value=250 step=1 />
+        <p>Min Value : <span id="minValue">25</span></p>
+        <input id="minControl" type="range" max=500 min=0 value=25 step=1 />
+        <p>
+            <label for="valueControl">Use Magnitude value? </label>
+            <input id="valueControl" type="checkbox" checked>
+        </p>
+    </div>
+    <script src="values.js"></script>
+</body>
+
+</html>
