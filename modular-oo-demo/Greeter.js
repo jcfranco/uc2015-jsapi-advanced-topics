@@ -14,7 +14,6 @@ function(
   // expose module definition (constructor function)
   return declare(null, {
 
-    _greetingsCount: 0,
 
     name: null,
 
@@ -26,8 +25,6 @@ function(
 
     greet: function() {
       greetings.greet(this.subject);
-
-      console.info(this.name + " has greeted " + ++this._greetingsCount + " times");
     }
 
   });
